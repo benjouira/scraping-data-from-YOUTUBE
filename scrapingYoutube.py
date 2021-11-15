@@ -64,7 +64,6 @@ while ("nextPageToken" in data):
 --
 *******************************************************************
 
-
 #scrappy from research
 
 query = 'Messi'
