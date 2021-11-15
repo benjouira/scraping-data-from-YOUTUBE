@@ -63,3 +63,31 @@ while ("nextPageToken" in data):
 
 --
 *******************************************************************
+
+
+#scrappy from research
+
+query = 'Messi'
+
+query_results = youtube.search().list(
+        part = 'snippet',
+        q = query,
+        order = 'relevance', # You can consider using viewCount
+        maxResults = 20,
+        type = 'video', # Channels might appear in search results
+        relevanceLanguage = 'en',
+        safeSearch = 'moderate',
+        ).execute()
+
+video_id = []
+channel = []
+video_title = []
+video_desc = []
+for item in query_results['items']:
+    video_id.append(item['id']['videoId'])
+    channel.append(item['snippet']['channelTitle'])
+    video_title.append(item['snippet']['title'])
+    video_desc.append(item['snippet']['description'])
+
+--
+*******************************************************************
